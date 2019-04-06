@@ -8,10 +8,12 @@ public class MainClass {
     Account account_2 = new Account("secondUser", "secondPassword", "Second User", "seconduser@example.com", new ActivityController());
 
     
-    account_1.activityController.createPost("Text", "REGULARPOST");
-    account_2.activityController.createPost("VideoImage", "TAGGEDPOST");
-    account_1.activityController.createPost("TextImageVideo", "TAGGEDPOST");
-
+    Post textPost = account_1.activityController.createPost("TextImage", "REGULARPOST");
+    /*Post videoImagePost = account_2.activityController.createPost("VideoImage", "TAGGEDPOST");
+    Post textImnageVideoPost = account_1.activityController.createPost("TextImageVideo", "TAGGEDPOST");*/
+    System.out.println("Likes: " +  textPost.getLikeCount() + " Dislikes: "+ textPost.getDislikeCount());
+    account_1.activityController.reactToPost(textPost, "Like");
+    account_2.activityController.reactToPost(textPost, "DisLike");
 
 	}
 

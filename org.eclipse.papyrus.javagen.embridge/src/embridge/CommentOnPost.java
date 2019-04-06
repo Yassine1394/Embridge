@@ -14,7 +14,7 @@ import embridge.PostReaction;
 public class CommentOnPost implements PostReaction {
 
 	@Override
-	public void reactToPost(Post p) {
+	public void reactToPost() {
 		// TODO Auto-generated method stub
 		
 	}

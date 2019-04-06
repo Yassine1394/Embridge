@@ -11,10 +11,18 @@ import embridge.PostReaction;
  * 
  */
 public class DislikePost implements PostReaction {
-	
+	 
+	private Post post;
+
+	   public DislikePost(Post post){
+	      this.post = post;
+	   }
+
+	  
 	@Override
-	public void reactToPost(Post p) {
+	public void reactToPost() {
 		// TODO Auto-generated method stub
+		 post.setDislikeCount();
 		
 	}
 };

@@ -24,36 +24,43 @@ public class ActivityController {
 	 * 
 	 * @param p 
 	 */
-	public void createPost(String content, String postType) {
+	public Post createPost(String content, String postType) {
 		PostBuilder postBuilder = new PostBuilder();
 		
 		
 		if (content == "Text") {
-			postBuilder.createText(postType);
+			Post createdPost = postBuilder.createText(postType);
+			return createdPost;
 		}
 		if (content == "Image") {
-			postBuilder.createImage(postType);
+			Post createdPost = postBuilder.createImage(postType);
+			return createdPost;
 		
 		}
 		if (content == "Video") {
-			postBuilder.createVideo(postType);
-		
+			Post createdPost = postBuilder.createVideo(postType);
+			return createdPost;
+			
 		}		if (content == "TextImage") {
-			postBuilder.createTextImage(postType);
+			Post createdPost = postBuilder.createTextImage(postType);
+			return createdPost;
 		
 		}		if (content == "VideoImage") {
-			postBuilder.createImageVideo(postType);
+			Post createdPost = postBuilder.createImageVideo(postType);
+			return createdPost;
 		
 		}		if (content == "TextVideo") {
-			postBuilder.createTextVideo(postType);
+			Post createdPost = postBuilder.createTextVideo(postType);
+			return createdPost;
 		}
 			if (content == "TextImageVideo") {
-				postBuilder.createTextImageVideo(postType);
+				Post createdPost = postBuilder.createTextImageVideo(postType);
+				return createdPost;
 			
 			}
 		
 		
-		
+		return null;
 		
 	}
 
@@ -76,9 +83,30 @@ public class ActivityController {
 	 * 
 	 * @param p 
 	 */
-	public void reactToPost(Post p) {
-	}
 
+
+	/**
+	 * 
+	 * @param m 
+	 */
+	public void reactToPost(Post post, String command) {
+		if (command == "Like") {
+			LikePost likePost = new LikePost(post);
+			PostReactionHandler postReactionHandler = new PostReactionHandler();
+			postReactionHandler.receiveReaction(likePost);
+			postReactionHandler.addReaction();
+			
+		}
+		if (command == "DisLike") {
+			DislikePost dislikePost = new DislikePost(post);
+			PostReactionHandler postReactionHandler = new PostReactionHandler();
+			postReactionHandler.receiveReaction(dislikePost);
+			postReactionHandler.addReaction();
+			
+		}
+		
+	}
+	
 	/**
 	 * 
 	 * @param m 

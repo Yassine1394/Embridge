@@ -18,5 +18,5 @@ public interface PostReaction {
 	 * 
 	 * @param p 
 	 */
-	public void reactToPost(Post p);
+	public void reactToPost();
 };

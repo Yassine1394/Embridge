@@ -17,41 +17,44 @@ public class PostBuilder {
 	 */
 	PostFactory postFactory = new PostFactory();
 	Scanner scanner = new Scanner(System.in);
-	public void createText(String postType) {
+	public Post createText(String postType) {
 		System.out.println("Enter your text content: ");
 		String content = scanner.nextLine();
 	    Post textPost = postFactory.getPost(postType);
 	    textPost.addContent(new Text(content));
 	    textPost.showContent();
 	    textPost.postType();
+	    return textPost;
 	}
 
 	/**
 	 * 
 	 */
-	public void createImage(String postType) {
+	public Post createImage(String postType) {
 		System.out.println("Enter your image url: ");
 		String image_url = scanner.nextLine();
 		Post imagePost = postFactory.getPost(postType);
 	    imagePost.addContent(new Image(image_url));
-	    imagePost.showContent();;
+	    imagePost.showContent();
+	    return imagePost;
 	}
 
 	/**
 	 * 
 	 */
-	public void createVideo(String postType) {
+	public Post createVideo(String postType) {
 		System.out.println("Enter your video url: ");
 		String video_url = scanner.nextLine();
 		Post videoPost = postFactory.getPost(postType);
 		videoPost.addContent(new Video(video_url));
 		videoPost.showContent();
 		videoPost.postType();
+		return videoPost;
 	}
 	/**
 	 * 
 	 */
-	public void createTextImage(String postType) {
+	public Post createTextImage(String postType) {
 		System.out.println("Enter your text content: ");
 		String content = scanner.nextLine();
 		System.out.println("Enter your image url: ");
@@ -61,13 +64,14 @@ public class PostBuilder {
 		textImagePost.addContent(new Image(image_url));
         textImagePost.showContent();
         textImagePost.postType();
+        return textImagePost;
 		
 	}
 
 	/**
 	 * 
 	 */
-	public void createImageVideo(String postType) {
+	public Post createImageVideo(String postType) {
 		System.out.println("Enter your image url: ");
 		String image_url = scanner.nextLine();
 		System.out.println("Enter your video url: ");
@@ -77,12 +81,13 @@ public class PostBuilder {
 		imageVideoPost.addContent(new Video(video_url));
 		imageVideoPost.showContent();
 		imageVideoPost.postType();
+		return imageVideoPost;
 	}
 
 	/**
 	 * 
 	 */
-	public void createTextVideo(String postType) {
+	public Post createTextVideo(String postType) {
 		System.out.println("Enter your text content: ");
 		String content = scanner.nextLine();
 		System.out.println("Enter your video url: ");
@@ -92,12 +97,13 @@ public class PostBuilder {
 		textVideoPost.addContent(new Video(video_url));
 	    textVideoPost.showContent();
 	    textVideoPost.postType();
+	    return textVideoPost;
 	}
 	/**
 	 * 
 	 */
 	
-	public void createTextImageVideo(String postType) {
+	public Post createTextImageVideo(String postType) {
 		System.out.println("Enter your text content: ");
 		String content = scanner.nextLine();
 		System.out.println("Enter your image url: ");
@@ -110,6 +116,7 @@ public class PostBuilder {
 		textImageVideoPost.addContent(new Video(video_url));
 		textImageVideoPost.showContent();
 		textImageVideoPost.postType();
+		return textImageVideoPost;
 		
 	}
 	

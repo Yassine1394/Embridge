@@ -11,10 +11,15 @@ import embridge.PostReaction;
  * 
  */
 public class LikePost implements PostReaction {
+     
+	 private Post post;
 
-	@Override
-	public void reactToPost(Post p) {
-		// TODO Auto-generated method stub
-		
-	}
-};
+	   public LikePost(Post post){
+	      this.post = post;
+	   }
+
+	   public void reactToPost() {
+	      post.setLikeCount();
+	   }
+ 
+}

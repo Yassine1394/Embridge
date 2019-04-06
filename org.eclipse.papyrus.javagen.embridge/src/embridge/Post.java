@@ -23,6 +23,26 @@ public abstract class Post {
 	private int dislikeCount;
 	
 	
+	 
+	public int getLikeCount() {
+		return likeCount;
+		
+	}
+
+	public void setLikeCount() {
+		this.likeCount += 1;
+		System.out.println("Post id: "+this.post_id+", Likes: " + likeCount + ", Dislikes: " + dislikeCount);
+	}
+
+	public int getDislikeCount() {
+		return dislikeCount;
+	}
+
+	public void setDislikeCount() {
+		this.dislikeCount += 1 ;
+		System.out.println("Post id: "+ this.post_id +", Likes: " + likeCount + ", Dislikes: " + dislikeCount);
+	}
+
 	public Post() {
 		
 	}

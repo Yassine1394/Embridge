@@ -4,6 +4,9 @@
 
 package embridge;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import embridge.Post;
 import embridge.PostReaction;
 
@@ -17,7 +20,14 @@ public class PostReactionHandler {
 	 * @param p 
 	 * @param pr 
 	 */
-	public void receiveReaction(Post p, PostReaction pr) {
+	 private List<PostReaction> reactionList = new ArrayList<PostReaction>(); 
+
+	  
+
+	   
+	public void receiveReaction(PostReaction pr) {
+		
+		reactionList.add(pr);
 	}
 
 	/**
@@ -25,6 +35,11 @@ public class PostReactionHandler {
 	 * @param p 
 	 * @param pr 
 	 */
-	public void addReaction(Post p, PostReaction pr) {
+	public void addReaction() {
+		
+		 for (PostReaction postReaction : reactionList) {
+	         postReaction.reactToPost();
+	      }
+	      reactionList.clear();
 	}
 };
